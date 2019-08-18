@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 class Irmao extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    // }
+  // constructor(props) {
+  //     super(props);
+  // }
 
   render() {
     return (
-        <div>
-            <h3>Componente irmão</h3>
-            <p>dados do irmão: { this.props.dataFromBrother }</p>
-        </div>
+      <div>
+        <h3>Componente irmão</h3>
+        <p>dados do irmão: {this.props.dataFromBrother}</p>
+      </div>
     );
   }
 

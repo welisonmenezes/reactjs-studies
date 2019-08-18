@@ -21,17 +21,17 @@ class Filho extends Component {
         this.props.callbackFromParentToBrother(this.state.countBrother);
     };
 
-  render() {
+    render() {
         return (
             <div>
                 <h3>Componente filho</h3>
-                <p>dados do pai: { this.props.dataFromParent }</p>
+                <p>dados do pai: {this.props.dataFromParent}</p>
                 <Button color="primary" onClick={this.sonFunction}>Enviar dados para o pai.</Button>
                 <br /><br />
                 <Button color="info" onClick={this.brotherFunction}>Enviar dados para o irmão.</Button>
             </div>
         );
-  }
+    }
 
 }
 

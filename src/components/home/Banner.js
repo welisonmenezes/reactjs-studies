@@ -3,37 +3,37 @@ import { Button } from 'reactstrap';
 
 class Banner extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            count: 1
-        };
-    }
-
-    someFn = () => {
-        //this.state.count++;
-        this.setState({ count: this.state.count + 1 });
-        //console.log(this.state.count);
-        const listInfo = 'data from child'
-        this.props.callbackFromParent(listInfo);
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 1
     };
+  }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('componentDidUpdate: ', prevState);
-    }
+  someFn = () => {
+    //this.state.count++;
+    this.setState({ count: this.state.count + 1 });
+    //console.log(this.state.count);
+    const listInfo = 'data from child'
+    this.props.callbackFromParent(listInfo);
+  };
 
-    getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('getSnapshotBeforeUpdate: ', prevState);
-        return null;
-    }
-    
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('componentDidUpdate: ', prevState);
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('getSnapshotBeforeUpdate: ', prevState);
+    return null;
+  }
+
   render() {
-      console.log(this.props.dataFromParent);
-      //this.someFn();
+    console.log(this.props.dataFromParent);
+    //this.someFn();
     return (
       <div>
         <p>
-            banner-here <b> { this.state.count } </b>
+          banner-here <b> {this.state.count} </b>
         </p>
         <Button color="primary" onClick={this.someFn}>Click aqui!</Button>
       </div>

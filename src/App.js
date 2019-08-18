@@ -8,6 +8,7 @@ import Navigation from './components/shared/navigation/Navigation';
 import Pai from './components/pass_params/Pai';
 import Home from './components/home/Home';
 import Pagina404 from './components/pagina404/Pagina404';
+import Lifecycle from './components/lifecycle/Lifecycle';
 
 class App extends Component {
 
@@ -19,6 +20,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact={true} component={Home} />
             <Route path="/pass-params" exact={true} component={Pai} />
+            <Route path="/lifecycle" exact={true} component={Lifecycle} />
             <Route path='*' component={Pagina404} />
           </Switch>
         </div>

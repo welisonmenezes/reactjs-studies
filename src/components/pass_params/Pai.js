@@ -29,31 +29,31 @@ class Pai extends Component {
     fromSonToBrother = (dataToBrother) => {
         this.setState({ dataToBrother });
     };
-    
 
-  render() {
-    return (
-        <div className="col-pai">
-            <div className="row row-1">
-                <div className="col-md-12">
-                    <h3>Componente pai</h3>
-                    dados do filho: { this.state.dataFromChild }
-                    <div>
-                        <Button color="secondary" onClick={this.sendToChild}>Enviar dados para o filho.</Button>
+
+    render() {
+        return (
+            <div className="col-pai">
+                <div className="row row-1">
+                    <div className="col-md-12">
+                        <h3>Componente pai</h3>
+                        dados do filho: {this.state.dataFromChild}
+                        <div>
+                            <Button color="secondary" onClick={this.sendToChild}>Enviar dados para o filho.</Button>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-6 col-filho">
+                        <Filho callbackFromParent={this.parentCallback} dataFromParent={this.state.count} callbackFromParentToBrother={this.fromSonToBrother} />
+                    </div>
+                    <div className="col-md-6 col-irmao">
+                        <Irmao dataFromBrother={this.state.dataToBrother} />
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-6 col-filho">
-                    <Filho callbackFromParent={this.parentCallback} dataFromParent={this.state.count} callbackFromParentToBrother={this.fromSonToBrother} />
-                </div>
-                <div className="col-md-6 col-irmao">
-                    <Irmao dataFromBrother={this.state.dataToBrother} />
-                </div>
-            </div>
-        </div>
-    );
-  }
+        );
+    }
 
 }
 
